@@ -45,19 +45,19 @@ expandLine line@((x1, y1), (x2, y2)) =
             Diagonal 1 -> [(x, y) | x <- [minX..maxX], y <- [minY..maxY], (x - minX) == (y - minY)]
             Diagonal (-1) -> [(x, y) | x <- [minX..maxX], y <- [minY..maxY], (x - minX) == (maxY - y)]
 
-sortPoints :: Point -> Point -> Ordering
-sortPoints (x1, y1) (x2, y2)
-    | x1 < x2 = LT
-    | x1 > x2 = GT
-    | x1 == x2 && y1 < y2 = LT
-    | x1 == x2 && y1 > y2 = GT
-    | x1 == x2 && y1 == y2 = EQ
-
 getVisitedPoints :: [Line] -> [Point]
 getVisitedPoints lines = concat $ map expandLine lines
 
 countIntersection :: [Point] -> Int
 countIntersection points = length $ filter (>1) $ map length $ group $ sortBy sortPoints $ points
+    where
+        sortPoints :: Point -> Point -> Ordering
+        sortPoints (x1, y1) (x2, y2)
+            | x1 < x2 = LT
+            | x1 > x2 = GT
+            | x1 == x2 && y1 < y2 = LT
+            | x1 == x2 && y1 > y2 = GT
+            | x1 == x2 && y1 == y2 = EQ
 
 -- Part 1
 
