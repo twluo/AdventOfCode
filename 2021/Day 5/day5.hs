@@ -6,10 +6,6 @@ type Line = (Point, Point)
 
 type Point = (Int, Int)
 
-type Cell = (Int, Point)
-
-type Grid = [[Cell]]
-
 data Orientation = 
     Horizontal   |
     Vertical     |
