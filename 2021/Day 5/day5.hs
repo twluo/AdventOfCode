@@ -38,8 +38,8 @@ expandLine line@((x1, y1), (x2, y2)) =
         case getLineOrientation line of
             Horizontal -> [(x, maxY) | x <- [minX..maxX]]
             Vertical -> [(maxX, y) | y <- [minY..maxY]]
-            Diagonal 1 -> [(x, y) | x <- [minX..maxX], y <- [minY..maxY], (x - minX) == (y - minY)]
-            Diagonal (-1) -> [(x, y) | x <- [minX..maxX], y <- [minY..maxY], (x - minX) == (maxY - y)]
+            Diagonal 1 -> zip [minX..maxX] [minY..maxY]
+            Diagonal (-1) -> zip [minX..maxX] [maxY, maxY-1..minY]
 
 getVisitedPoints :: [Line] -> [Point]
 getVisitedPoints lines = concat $ map expandLine lines
