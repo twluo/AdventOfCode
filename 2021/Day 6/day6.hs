@@ -1,6 +1,8 @@
 import Data.List.Split
 import Data.List
 
+-- Helper Functions
+
 processInput :: String -> [Int]
 processInput input =
     let fishes = map (read::String -> Int) $ splitOn "," input
@@ -20,11 +22,16 @@ advanceFishes fishes currDay targetDay
     | currDay == targetDay = fishes
     | otherwise = advanceFishes (advanceFish $ fishes) (currDay + 1) targetDay
 
+-- Part 1
+
 solve1 :: [Int] -> Int
 solve1 fishes = sum $ advanceFishes fishes 0 80
 
+-- Part 2
+
 solve2 :: [Int] -> Int
 solve2 fishes = sum $ advanceFishes fishes 0 256
+
 main = do
     input <- readFile "input.txt"
     let fishes = processInput input
