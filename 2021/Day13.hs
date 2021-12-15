@@ -94,7 +94,7 @@ solve2 :: Grid -> [Instruction] -> [[Char]]
 solve2 grid instructions = gridToList $ execute grid instructions
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day13.txt"
     let (grid, instructions) = processInput input
     print $ solve1 grid instructions
     mapM print $ solve2 grid instructions

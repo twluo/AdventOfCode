@@ -51,7 +51,7 @@ solve2 :: [Int] -> Int
 solve2 incomplete = (sort $ incomplete)!!(((length incomplete) - 1) `div` 2)
     
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day10.txt"
     let lines = processInput input
         (corrupted, incomplete) = partition (\(x, y) -> x == "corrupted") ((checkLines "") <$> lines)
     print $ solve1 . snd $ unzip corrupted

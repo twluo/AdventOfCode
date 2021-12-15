@@ -71,7 +71,7 @@ solve2 numbers = lifeSupportRating where
     lifeSupportRating = oxygenRating * cO2Rating
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day3.txt"
     let numbers = splitOn "\r\n" input
     print $ solve1 $ numbers
     print $ solve2 $ numbers

@@ -32,7 +32,7 @@ solve2 :: Crabs -> Int
 solve2 crabs = minimum $ getFuelCost2 crabs <$> [(minimum crabs)..(maximum crabs)]
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day7.txt"
     let crabs = processInput input
     print $ solve1 crabs
     print $ solve2 crabs

@@ -57,7 +57,7 @@ solve2 (template, rules) = mostCommon - leastCommon
         (mostCommon, leastCommon) = findMostLeastCommon $ expand rules template [] 40
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day14.txt"
     let parsedInput = processInput input
     print $ solve1 parsedInput
     print $ solve2 parsedInput

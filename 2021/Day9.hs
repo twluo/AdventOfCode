@@ -59,7 +59,7 @@ solve2 heightMap coordList = x1 * x2 * x3
         (x1:x2:x3:_) = reverse $ sort $ length <$> (getBasin heightMap <$> lowPoints)
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day9.txt"
     let heightMap = processInput input
         coordList = [(x, y) | y <- [0..(length heightMap) - 1], x <- [0..(length $ head heightMap) - 1]]
     print $ solve1 heightMap coordList

@@ -85,7 +85,7 @@ solve2 :: DigitsOutputList -> Int
 solve2 digitsOutput = sum $ decodeDigitOutput <$> digitsOutput
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day8.txt"
     let digitsOutput = processInput input
     print $ solve1 digitsOutput
     print $ solve2 digitsOutput

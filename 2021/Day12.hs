@@ -60,7 +60,7 @@ solve2 :: Graph -> Int
 solve2 graph = length $ findPart2Paths graph [] [] "start"
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day12.txt"
     let graph = processInput input
     print $ solve1 graph
     print $ solve2 graph

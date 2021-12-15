@@ -33,7 +33,7 @@ solve2 :: [Int] -> Int
 solve2 fishes = sum $ advanceFishes fishes 0 256
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day6.txt"
     let fishes = processInput input
     print $ solve1 fishes
     print $ solve2 fishes

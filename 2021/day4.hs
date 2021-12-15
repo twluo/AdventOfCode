@@ -91,7 +91,7 @@ solve2 boards numbers = boardScore * winNumber where
     boardScore = scoreBoard $ head newBoards
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day4.txt"
     let (numbers, boards) = processInput input
     print $ solve1 boards numbers
     print $ solve2 boards numbers

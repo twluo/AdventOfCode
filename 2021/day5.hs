@@ -72,7 +72,7 @@ solve2 :: [Line] -> Int
 solve2 lines = countIntersection $ getVisitedPoints lines
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day5.txt"
     let lines = processInput input
     print $ solve1 lines 
     print $ solve2 lines

@@ -27,7 +27,7 @@ solve2 :: [(String, Int)] -> Int
 solve2 lines = direction * value where (direction, value, _) = (findDepthAndDistAndAim lines (0, 0, 0))
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day2.txt"
     let lines = map processInput $ splitOn "\r\n" input
     print $ solve1 lines
     print $ solve2 lines

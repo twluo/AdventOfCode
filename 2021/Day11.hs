@@ -109,7 +109,7 @@ solve2 :: Grid -> Int
 solve2 grid = firstSimul grid 0
         
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day11.txt"
     let grid = processInput input
     print $ solve1 grid
     print $ solve2 grid

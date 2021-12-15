@@ -73,7 +73,7 @@ solve2 :: [String] -> Int
 solve2 incomplete = (sort $ getAutoCompleteScore <$> (getAutoCompleteString <$> incomplete))!!(((length incomplete) - 1) `div` 2)
 
 main = do
-    input <- readFile "input.txt"
+    input <- readFile "day10.txt"
     let (corrupted, incomplete) = processInput input
     print $ solve1 corrupted
     print $ solve2 incomplete
